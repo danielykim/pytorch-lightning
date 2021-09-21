@@ -197,7 +197,7 @@ class RichProgressBar(ProgressBarBase):
     def predict_description(self) -> str:
         return "Predicting"
 
-    def setup(self, trainer, pl_module, stage=None):
+    def setup(self, trainer, pl_module, stage: Optional[str] = None):
         self.progress = Progress(
             TextColumn("[progress.description]{task.description}"),
             BarColumn(complete_style=self.theme.progress_bar_complete, finished_style=self.theme.progress_bar_finished),
